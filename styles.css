@@ -1,0 +1,55 @@
+/* Body */
+html {
+  background-image: url(https://i.gifer.com/PAq.gif);
+}
+body {
+  font-family: 'Common Pixel', sans-serif;
+  color: orange;
+}
+
+.bar__win-count {
+  font-size: 28px;
+}
+
+img {
+  height: 50px
+}
+
+.turn__text {
+  font-size: 35px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left--side {
+  background-color: grey;
+}
+
+.board--grid {
+  /* background-color: grey; */
+  font-size: 30px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto auto auto;
+}
+
+.board--grid > div {
+  text-align: center;
+  padding: 50px;
+}
+
+.grid-set1 {
+  border-right: 7px solid green;
+  border-bottom: 7px solid green;
+}
+
+.grid-set2 {
+  border-bottom: 7px solid green;
+}
+
+.grid-set3 {
+  border-right: 7px solid green;
+}
