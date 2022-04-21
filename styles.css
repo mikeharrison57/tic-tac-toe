@@ -24,12 +24,14 @@ img {
   justify-content: space-between;
 }
 
-.left--side {
-  background-color: grey;
+.turn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .board--grid {
-  /* background-color: grey; */
+  background-color: grey;
   font-size: 30px;
   display: grid;
   justify-content: center;
@@ -38,7 +40,7 @@ img {
 
 .board--grid > div {
   text-align: center;
-  padding: 50px;
+  padding: 60px;
 }
 
 .grid-set1 {
