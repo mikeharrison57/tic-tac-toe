@@ -33,7 +33,7 @@ class Game {
 // If player one has taken a turn,
 // this.board [curentCell.id] assigned to current token,
 // cannont place same token in cell,
-// use conditional to place differnt token in next clicked cell
+// use conditional to place differnt token in next clicked cell 
 
 // A Game should include:
 

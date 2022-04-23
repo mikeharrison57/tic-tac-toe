@@ -1,9 +1,6 @@
 // Query Selectors
-
 var gameGrid = document.querySelector('#gameBoard');
-var gameSpace = document.querySelectorAll('.game-space');
-
-console.log(gameGrid);
+var turnText = document.querySelector('.turn__text')
 
 // Class Instances
 var newGame = new Game();
@@ -20,6 +17,7 @@ function placeToken(event) {
   if (!clickedSpace.innerHTML) {
     clickedSpace.innerHTML = newGame.currentPlayer.token
     newGame.takeTurn(event.target.id)
+    turnText.innerHTML = `IT'S  ${newGame.currentPlayer.token}'s TURN`
     newGame.turns ++
   }
 }
