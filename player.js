@@ -1,8 +1,9 @@
 class Player {
-  constructor(token) {
-  this.id = Date.now().toString();
+  constructor(token, id, turn) {
   this.token = token;
-  this.choice = []
+  this.id = id;
+  this.turn = turn;
+  this.choice = [];
   this.wins = 0;
   }
   increaseWins() {
