@@ -1,9 +1,9 @@
 class Player {
-  constructor(icon) {
+  constructor(token) {
   this.id = Date.now().toString();
-  this.icon = icon;
+  this.token = token;
+  this.choice = []
   this.wins = 0;
-  this.wins = [];
   }
   increaseWins() {
     this.wins++

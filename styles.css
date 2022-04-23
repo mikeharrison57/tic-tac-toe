@@ -1,6 +1,7 @@
 /* Body */
 html {
-  background-image: url(https://i.gifer.com/PAq.gif);
+  /* background-image: url(https://i.gifer.com/PAq.gif); */
+  background-color: grey;
 }
 body {
   font-family: 'Common Pixel', sans-serif;
