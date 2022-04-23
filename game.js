@@ -1,5 +1,5 @@
 class Game {
-  constructor(board) {
+  constructor() {
     this.id = Date.now().toString();
     this.turn = false;
     this.player1 = new Player;
@@ -7,35 +7,16 @@ class Game {
     this.players = [this.player1, this.player2]
     this.win = false;
     this.lose = false;
-    this.board = board;
-    this.winCombos = {
-      one: 123,
-      two: 321,
-      three: 456,
-      four: 654,
-      five: 789,
-      six: 987,
-      seven: 147,
-      eight: 741,
-      nine: 258,
-      ten: 852,
-      eleven: 369,
-      twelve: 963,
-      thirteen: 159,
-      fourteen: 951,
-      fifteen: 357,
-      sixteen: 753
-    };
-  }
-  evaluateWinConditions() {
-
-  }
-  trackWins() {
-    if (this.player1.increaseWins()) {
-      return this.player1.wins
-    } else if (this.player2.increaseWins) {
-      return this.player2.wins
-    }
+    this.winCombos = [
+      [0,1,2]
+      [3,4,5]
+      [6,7,8]
+      [0,3,6]
+      [1,4,7]
+      [2,5,8]
+      [0,4,8]
+      [2,4,6]
+    ];
   }
 }
 
