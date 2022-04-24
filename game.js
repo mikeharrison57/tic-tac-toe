@@ -24,35 +24,28 @@ class Game {
       this.currentPlayer = this.player1
     }
   }
-  // evaluatePlayerWins() {
-  //   for (var i = 0; i < this.winCombos.length; i++) {
-  //     var winCondition = this.winCombos[i];
-  //     var one = this.board[winCondition[0]];
-  //     var two = this.board[winCondition[2]];
-  //     var three = this.board[winCondition[3]];
-  //     if (one === '' || two === '' || three === '') {
-  //       continue;
-  //     } else if (one === two && two === three) {
-  //       this.currentPlayer.increaseWins();
-  //       this.currentPlayer.win = true;
-  //       break;
-  //     }
-  //   }
-  // }
-  // evaluatePlayerWins() {
-  //   if ((this.winCombos[0] === this.board[this.player1.token]) ||
-  //     (this.winCombos[1] === this.board[this.player1.token]) ||
-  //     (this.winCombos[2] === this.board[this.player1.token]) ||
-  //     (this.winCombos[3] === this.board[this.player1.token]) ||
-  //     (this.winCombos[4] === this.board[this.player1.token]) ||
-  //     (this.winCombos[5] === this.board[this.player1.token]) ||
-  //     (this.winCombos[6] === this.board[this.player1.token]) ||
-  //     (this.winCombos[7] === this.board[this.player1.token]) ||
-  //     (this.winCombos[8] === this.board[this.player1.token])) {
-  //     this.player1.increaseWins();
-  //     this.player1.win = true;
-  //     }
-  // }
+  evaluatePlayerWins(player) {
+    for (var i = 0; i < this.winCombos.length; i++) {
+      var winCondition = this.winCombos[i];
+      var zero = this.board[winCondition[0]];
+      var one = this.board[winCondition[1]];
+      var two = this.board[winCondition[2]];
+      if (zero === player && one === player && two === player) {
+        return true;
+      }
+    }
+  }
+  declareWinner() {
+    var player1Win = this.evaluatePlayerWins(this.player1.token);
+    var player2Win = this.evaluatePlayerWins(this.player2.token);
+    if (player1Win) {
+      this.player1.increaseWins();
+      console.log('Player 1 Wins');
+    } else if (player2Win) {
+      this.player2.increaseWins();
+      console.log('Player 2 Wins');
+    }
+  }
 }
 
 
@@ -72,6 +65,4 @@ class Game {
 // are full, then the game will result in a draw, not update wins, and game
 // will reset.
 
-// A way to reset the Game’s board to begin a new game
-// reset game once win or tie conditions are met. Remove all tokens
-// switch who's turn it is, and update win counter if a player has won
+// and update win counter if a player has won
