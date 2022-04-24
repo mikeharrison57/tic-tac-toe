@@ -9,7 +9,6 @@ var newGame = new Game();
 // Event Listeners
 gameGrid.addEventListener('click', placeToken);
 gameGrid.addEventListener('click', displayDraw);
-
 gameGrid.addEventListener('click', displayWinner);
 
 // Functions
@@ -21,13 +20,17 @@ function placeToken(event) {
     newGame.takeTurn(event.target.id)
     turnText.innerHTML = `IT'S  ${newGame.currentPlayer.token}'s TURN`
     newGame.turns ++
-    newGame.declareWinner();
   }
 }
 
 function displayWinner() {
-  if (newGame.declareWinner()) {
-    turnText.innerHTML = `${newGame.currentPlayer.token} WON!!!`
+  newGame.declareWinner();
+  if (newGame.player1.wins) {
+  turnText.innerHTML = `${newGame.player1.token} WON!!!`
+  setTimeout(resetGameBoard, 3000)
+} else if (newGame.player2.wins) {
+  turnText.innerHTML = `${newGame.player2.token} WON!!!`
+  setTimeout(resetGameBoard, 3000)
   }
 }
 
@@ -35,7 +38,7 @@ function displayDraw() {
   if (newGame.turns === 9 && !newGame.evaluatePlayerWins()) {
     newGame.turns = 0
     turnText.innerHTML = "IT'S A DRAW!!!";
-    setTimeout(resetGameBoard, 3000)
+    setTimeout(resetGameBoard, 3000);
   }
 }
 
@@ -43,5 +46,5 @@ function resetGameBoard() {
   for (var i = 0; i < gameSpaces.length; i++) {
     gameSpaces[i].innerHTML = ''
   }
-  return turnText.innerHTML = `IT'S  ${newGame.currentPlayer.token}'s TURN`
+  return turnText.innerHTML = `IT'S ${newGame.currentPlayer.token}'s TURN`
 }
