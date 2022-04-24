@@ -1,17 +1,14 @@
 // Query Selectors
-
 var gameGrid = document.querySelector('#gameBoard');
-var gameSpace = document.querySelectorAll('.game-space');
-
-console.log(gameGrid);
+var turnText = document.querySelector('.turn__text');
+var gameSpaces = document.querySelectorAll('.game-space');
 
 // Class Instances
 var newGame = new Game();
-console.log(newGame.player1.token)
 
 // Event Listeners
-
 gameGrid.addEventListener('click', placeToken);
+gameGrid.addEventListener('click', displayDraw);
 
 // Functions
 
@@ -20,6 +17,28 @@ function placeToken(event) {
   if (!clickedSpace.innerHTML) {
     clickedSpace.innerHTML = newGame.currentPlayer.token
     newGame.takeTurn(event.target.id)
+    turnText.innerHTML = `IT'S  ${newGame.currentPlayer.token}'s TURN`
     newGame.turns ++
   }
+}
+
+// function winner() {
+//   if (newGame.evaluatePlayerWins()) {
+//     turnText.innerHTML = `${newGame.currentPlyer.token} WON!!!`
+//   }
+// }
+
+function displayDraw() {
+  if (newGame.turns >= 9) {
+    newGame.turns = 0
+    turnText.innerHTML = "IT'S A DRAW!!!";
+    setTimeout(resetGameBoard, 3000)
+  }
+}
+
+function resetGameBoard() {
+  for (var i = 0; i < gameSpaces.length; i++) {
+    gameSpaces[i].innerHTML = ''
+  }
+  return turnText.innerHTML = `IT'S  ${newGame.currentPlayer.token}'s TURN`
 }
