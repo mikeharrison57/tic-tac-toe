@@ -40,17 +40,24 @@ class Game {
     var player2Win = this.evaluatePlayerWins(this.player2.token);
     if (player1Win) {
       this.player1.increaseWins();
+      this.player1.won = true;
+      this.player2.won = false;
       console.log('Player 1 Wins');
     } else if (player2Win) {
       this.player2.increaseWins();
+      this.player2.won = true;
+      this.player1.won = false;
       console.log('Player 2 Wins');
-    } else {
-      !player1Win;
-      !player2Win;
     }
+  };
+resetGame() {
+  for (var i = 0; i < this.board.length; i++) {
+    this.board[i] = ''
+    }
+    this.player1.won = false;
+    this.player2.won = false;
   }
 };
-
 
 // A Game should include:
 
