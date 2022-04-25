@@ -42,12 +42,10 @@ class Game {
       this.player1.increaseWins();
       this.player1.won = true;
       this.player2.won = false;
-      console.log('Player 1 Wins');
     } else if (player2Win) {
       this.player2.increaseWins();
       this.player2.won = true;
       this.player1.won = false;
-      console.log('Player 2 Wins');
     }
   };
 resetGame() {
@@ -60,15 +58,6 @@ resetGame() {
 };
 
 // A Game should include:
-
-// A way to keep track of the data for the game board
-// have two arrays to keep track of wins and ties. Need wins to update
-// win counter on DOM eventually.
-
-
-// A way to check the Game’s board data for win conditions
-// Need array of win conditions. Loop through array to have it
-// trigger a win when one of the players has won.
 
 // A way to detect when a game is a draw (no one has won)
 // Conditionals for if all spaces on the grid are full. If all the spaces
