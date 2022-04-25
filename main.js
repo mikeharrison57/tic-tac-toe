@@ -2,6 +2,9 @@
 var gameGrid = document.querySelector('#gameBoard');
 var turnText = document.querySelector('.turn__text');
 var gameSpaces = document.querySelectorAll('.game-space');
+var samusWinCount = document.querySelector('#samusWins');
+var metroidWinCount = document.querySelector('#metroidWins');
+
 
 // Class Instances
 var newGame = new Game();
@@ -19,32 +22,42 @@ function placeToken(event) {
     clickedSpace.innerHTML = newGame.currentPlayer.token
     newGame.takeTurn(event.target.id)
     turnText.innerHTML = `IT'S  ${newGame.currentPlayer.token}'s TURN`
-    newGame.turns ++
-  }
-};
+    }
+  };
+
+function limitClicks() {
+  gameGrid.removeEventListener('click', placeToken);
+  gameGrid.removeEventListener('click', displayWinner);
+}
 
 function displayWinner() {
   newGame.declareWinner();
-  if (newGame.player1.wins) {
+  if (newGame.player1.won === true) {
     turnText.innerHTML = `${newGame.player1.token} WON!!!`
+    samusWinCount.innerHTML = `${newGame.player1.wins} WINS`
+    limitClicks();
     setTimeout(resetGameBoard, 3000)
-} else if (newGame.player2.wins) {
+} else if (newGame.player2.won === true) {
     turnText.innerHTML = `${newGame.player2.token} WON!!!`
+    metroidWinCount.innerHTML = `${newGame.player2.wins} WINS`
+    limitClicks();
     setTimeout(resetGameBoard, 3000)
   }
 };
 
 function displayDraw() {
-  if (newGame.turns === 9 && !newGame.evaluatePlayerWins()) {
-    newGame.turns = 0
+  if (!newGame.board.includes('') && !newGame.evaluatePlayerWins()) {
     turnText.innerHTML = "IT'S A DRAW!!!";
     setTimeout(resetGameBoard, 3000);
   }
 };
 
 function resetGameBoard() {
+  newGame.resetGame();
   for (var i = 0; i < gameSpaces.length; i++) {
     gameSpaces[i].innerHTML = ''
   }
+  gameGrid.addEventListener('click', placeToken);
+  gameGrid.addEventListener('click', displayWinner);
   return turnText.innerHTML = `IT'S ${newGame.currentPlayer.token}'s TURN`
 };
