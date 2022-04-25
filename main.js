@@ -26,7 +26,8 @@ function placeToken(event) {
   };
 
 function limitClicks() {
-  gameGrid.removeEventListener('click', placeToken)
+  gameGrid.removeEventListener('click', placeToken);
+  gameGrid.removeEventListener('click', displayWinner);
 }
 
 function displayWinner() {
@@ -34,12 +35,12 @@ function displayWinner() {
   if (newGame.player1.won === true) {
     turnText.innerHTML = `${newGame.player1.token} WON!!!`
     samusWinCount.innerHTML = `${newGame.player1.wins} WINS`
-    // limitClicks();
+    limitClicks();
     setTimeout(resetGameBoard, 3000)
 } else if (newGame.player2.won === true) {
     turnText.innerHTML = `${newGame.player2.token} WON!!!`
-    metroidWinCount.innerHTML = `${newGame.player2.wins} WINS` 
-    // limitClicks();
+    metroidWinCount.innerHTML = `${newGame.player2.wins} WINS`
+    limitClicks();
     setTimeout(resetGameBoard, 3000)
   }
 };
@@ -56,5 +57,7 @@ function resetGameBoard() {
   for (var i = 0; i < gameSpaces.length; i++) {
     gameSpaces[i].innerHTML = ''
   }
+  gameGrid.addEventListener('click', placeToken);
+  gameGrid.addEventListener('click', displayWinner);
   return turnText.innerHTML = `IT'S ${newGame.currentPlayer.token}'s TURN`
 };
