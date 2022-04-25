@@ -31,15 +31,17 @@ function displayWinner() {
   newGame.declareWinner();
   if (newGame.player1.won === true) {
     turnText.innerHTML = `${newGame.player1.token} WON!!!`
+    limitClicks();
     setTimeout(resetGameBoard, 3000)
 } else if (newGame.player2.won === true) {
     turnText.innerHTML = `${newGame.player2.token} WON!!!`
+    limitClicks();
     setTimeout(resetGameBoard, 3000)
   }
 };
 
 function displayDraw() {
-  if (!newGame.board.includes('')) {
+  if (!newGame.board.includes('') && !newGame.evaluatePlayerWins()) {
     turnText.innerHTML = "IT'S A DRAW!!!";
     setTimeout(resetGameBoard, 3000);
   }
@@ -52,5 +54,3 @@ function resetGameBoard() {
   }
   return turnText.innerHTML = `IT'S ${newGame.currentPlayer.token}'s TURN`
 };
-
-// !newGame.evaluatePlayerWins()
