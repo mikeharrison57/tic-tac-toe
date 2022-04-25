@@ -1,6 +1,6 @@
 class Game {
   constructor() {
-    this.turns = 0;
+    // this.turns = 0;
     this.player1 = new Player('<img src="./assets/samus-head.png" alt="samus-head">', 1);
     this.player2 = new Player('<img src="./assets/Metroid.png" alt="samus-head">', 2);
     this.currentPlayer = this.player1;

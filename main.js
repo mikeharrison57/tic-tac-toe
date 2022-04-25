@@ -20,8 +20,13 @@ function placeToken(event) {
     newGame.takeTurn(event.target.id)
     turnText.innerHTML = `IT'S  ${newGame.currentPlayer.token}'s TURN`
     newGame.turns ++
-  }
-};
+    console.log('token clicked')
+    }
+  };
+
+// function limitClicks() {
+//   gameGrid.removeEventListener('click', placeToken)
+// }
 
 function displayWinner() {
   newGame.declareWinner();
@@ -35,8 +40,8 @@ function displayWinner() {
 };
 
 function displayDraw() {
-  if (newGame.turns === 9 && !newGame.evaluatePlayerWins()) {
-    newGame.turns = 0
+  if (!newGame.board.includes('') && !newGame.evaluatePlayerWins()) {
+    // newGame.turns = 0
     turnText.innerHTML = "IT'S A DRAW!!!";
     setTimeout(resetGameBoard, 3000);
   }
