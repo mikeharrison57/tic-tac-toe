@@ -3,21 +3,24 @@
   <head>
     <meta charset="UTF-8">
     <link href="http://fonts.cdnfonts.com/css/common-pixel" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
     <title>Metroid Tic-tac-toe</title>
   </head>
   <body>
-    <article class="top left--right">
+    <article class="top left--side">
       <aside class ="bar left--side">
         <article class="bar__top-left">
           <img src="./assets/samus-head.png" alt="samus-head">
-          <h2 class="bar__win-count"id="samusWins">0 WINS</h2>
+          <h3 class="bar__win-count"id="samusWins">0 WINS</h2>
         </article>
       </aside>
+      <section class="top center--side">
+        <h1 class="bar__title">METROID TIC-TAC-TOE</h1>
+      </section>
       <aside class ="bar right--side">
         <article class="bar__top-right">
           <img src="./assets/Metroid.png" alt="metroid">
-          <h2 class="bar__win-count"id="metroidWins">0 WINS</h2>
+          <h3 class="bar__win-count"id="metroidWins">0 WINS</h2>
         </article>
       </aside>
     </article>
@@ -27,18 +30,18 @@
       </article>
     </section>
     <section class="game board--grid" id="gameBoard">
-        <div class="game-space grid-set1" id=0></div>
-        <div class="game-space grid-set1" id=1></div>
-        <div class="game-space grid-set2" id=2></div>
-        <div class="game-space grid-set1" id=3></div>
-        <div class="game-space grid-set1" id=4></div>
-        <div class="game-space grid-set2" id=5></div>
-        <div class="game-space grid-set3" id=6></div>
-        <div class="game-space grid-set3" id=7></div>
-        <div class="game-space grid-solo" id=8></div>
+      <div class="game-space grid-set1" id=0></div>
+      <div class="game-space grid-set1" id=1></div>
+      <div class="game-space grid-set2" id=2></div>
+      <div class="game-space grid-set1" id=3></div>
+      <div class="game-space grid-set1" id=4></div>
+      <div class="game-space grid-set2" id=5></div>
+      <div class="game-space grid-set3" id=6></div>
+      <div class="game-space grid-set3" id=7></div>
+      <div class="game-space grid-solo" id=8></div>
     </section>
-    <script type="text/javascript" src="player.js"></script>
-    <script type="text/javascript" src="game.js"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="./player.js"></script>
+    <script type="text/javascript" src="./game.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
   </body>
 </html>

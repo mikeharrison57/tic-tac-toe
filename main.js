@@ -30,6 +30,8 @@ function limitClicks() {
   gameGrid.removeEventListener('click', displayWinner);
 }
 
+// function startEvents()
+
 function displayWinner() {
   newGame.declareWinner();
   if (newGame.player1.won === true) {
