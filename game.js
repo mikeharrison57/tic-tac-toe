@@ -15,7 +15,7 @@ class Game {
       [0, 4, 8],
       [2, 4, 6],
     ];
-  }
+  };
   takeTurn(spaceId) {
     this.board[spaceId] = this.currentPlayer.token
     if (this.currentPlayer === this.player1) {
@@ -23,7 +23,7 @@ class Game {
     } else if (this.currentPlayer === this.player2) {
       this.currentPlayer = this.player1
     }
-  }
+  };
   evaluatePlayerWins(player) {
     for (var i = 0; i < this.winCombos.length; i++) {
       var winCondition = this.winCombos[i];
@@ -31,10 +31,10 @@ class Game {
       var one = this.board[winCondition[1]];
       var two = this.board[winCondition[2]];
       if (zero === player && one === player && two === player) {
-        return true;
+        return this.currentPlayer.won = true;
       }
     }
-  }
+  };
   declareWinner() {
     var player1Win = this.evaluatePlayerWins(this.player1.token);
     var player2Win = this.evaluatePlayerWins(this.player2.token);
@@ -44,9 +44,12 @@ class Game {
     } else if (player2Win) {
       this.player2.increaseWins();
       console.log('Player 2 Wins');
+    } else {
+      !player1Win;
+      !player2Win;
     }
   }
-}
+};
 
 
 // A Game should include:
