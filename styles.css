@@ -3,22 +3,21 @@
   border: 2px solid red;
 } */
 html {
-  background-image: url('https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2021/06/Pixel-Cover.jpg');
   background-image: url('https://i.gifer.com/PAq.gif');
   background-position: center;
   background-color: grey;
 }
 body {
-  font-family: 'Common Pixel', sans-serif;
+  font-family: 'Press Start 2P', cursive;
   color: orange;
 }
 
 .bar__win-count {
-  font-size: 28px;
+  font-size: 25px;
 }
 
 .bar__title {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 img {
@@ -26,11 +25,10 @@ img {
 }
 
 .turn__text {
-  font-size: 35px;
+  font-size: 28px;
 }
 
 .top {
-  /* background-image: url('https://www.teahub.io/photos/full/217-2178749_metroid-super.png'); */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -46,7 +44,8 @@ img {
 }
 
 .board--grid {
-  background-image: url('https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2021/06/Pixel-Cover.jpg');
+  /* background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2021/06/Pixel-Cover.jpg'); */
+  background-color: rgba(79, 91, 102, .9);
   background-size: cover;
   background-position: center;
   height: auto;
@@ -66,14 +65,14 @@ img {
 }
 
 .grid-set1 {
-  border-right: 7px solid green;
-  border-bottom: 7px solid green;
+  border-right: 7px solid orange;
+  border-bottom: 7px solid orange;
 }
 
 .grid-set2 {
-  border-bottom: 7px solid green;
+  border-bottom: 7px solid orange;
 }
 
 .grid-set3 {
-  border-right: 7px solid green;
+  border-right: 7px solid orange;
 }
