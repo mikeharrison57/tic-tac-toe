@@ -1,17 +1,12 @@
 /* Body */
-/* * {
-  border: 2px solid red;
-} */
 html {
   background-image: url('https://i.gifer.com/PAq.gif');
-  background-position: center;
-  background-color: grey;
-}
-body {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P';
   color: orange;
+
 }
 
+/* Top Bar */
 .bar__win-count {
   font-size: 25px;
 }
@@ -24,43 +19,38 @@ img {
   height: 50px
 }
 
-.turn__text {
-  font-size: 28px;
-}
-
 .top {
-  background-size: cover;
-  background-position: center;
   display: flex;
-  justify-content: space-between;
-  border: 0;
-
+  justify-content: space-around;
+  background-position: center;
 }
 
+/* Turn Text */
 .turn {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.turn__text {
+  font-size: 28px;
+}
+
+/* Tic-Tac-Toe Grid */
 .board--grid {
-  /* background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2021/06/Pixel-Cover.jpg'); */
-  background-color: rgba(79, 91, 102, .9);
-  background-size: cover;
-  background-position: center;
   height: auto;
   width: 45%;
   font-size: 30px;
   display: grid;
   justify-content: center;
   grid-template-columns: auto auto auto;
-  margin-left: 26%;
+  margin-left: 27%;
 }
 
 .board--grid > div {
-  text-align: center;
-  width: 60px;
-  height: 60px;
+  background-color: rgba(79, 91, 102, .9);
+  width: 50px;
+  height: 50px;
   padding: 60px;
 }
 

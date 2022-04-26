@@ -1,10 +1,10 @@
 class Game {
   constructor() {
-    // this.turns = 0;
     this.player1 = new Player('<img src="./assets/samus-head.png" alt="samus-head">', 1);
     this.player2 = new Player('<img src="./assets/Metroid.png" alt="samus-head">', 2);
     this.currentPlayer = this.player1;
-    this.board = ['', '', '', '', '', '', '', '', '']
+    this.draw = false;
+    this.board = ['', '', '', '', '', '', '', '', ''];
     this.winCombos = [
       [0, 1, 2],
       [3, 4, 5],
@@ -17,11 +17,11 @@ class Game {
     ];
   };
   takeTurn(spaceId) {
-    this.board[spaceId] = this.currentPlayer.token
+    this.board[spaceId] = this.currentPlayer.token;
     if (this.currentPlayer === this.player1) {
-      this.currentPlayer = this.player2
+      this.currentPlayer = this.player2;
     } else if (this.currentPlayer === this.player2) {
-      this.currentPlayer = this.player1
+      this.currentPlayer = this.player1;
     }
   };
   evaluatePlayerWins(player) {
@@ -48,11 +48,15 @@ class Game {
       this.player1.won = false;
     }
   };
-resetGame() {
-  for (var i = 0; i < this.board.length; i++) {
-    this.board[i] = ''
+  declareDraw() {
+    this.draw = true;
+  }
+  resetGame() {
+    for (var i = 0; i < this.board.length; i++) {
+      this.board[i] = ''
     }
     this.player1.won = false;
     this.player2.won = false;
+    this.draw = false;
   }
 };
