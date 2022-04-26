@@ -4,7 +4,7 @@ class Game {
     this.player2 = new Player('<img src="./assets/Metroid.png" alt="samus-head">', 2);
     this.currentPlayer = this.player1;
     this.draw = false;
-    this.board = ['', '', '', '', '', '', '', '', '']
+    this.board = ['', '', '', '', '', '', '', '', ''];
     this.winCombos = [
       [0, 1, 2],
       [3, 4, 5],
@@ -17,11 +17,11 @@ class Game {
     ];
   };
   takeTurn(spaceId) {
-    this.board[spaceId] = this.currentPlayer.token
+    this.board[spaceId] = this.currentPlayer.token;
     if (this.currentPlayer === this.player1) {
-      this.currentPlayer = this.player2
+      this.currentPlayer = this.player2;
     } else if (this.currentPlayer === this.player2) {
-      this.currentPlayer = this.player1
+      this.currentPlayer = this.player1;
     }
   };
   evaluatePlayerWins(player) {

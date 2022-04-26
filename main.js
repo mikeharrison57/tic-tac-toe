@@ -15,35 +15,27 @@ gameGrid.addEventListener('click', displayDraw);
 gameGrid.addEventListener('click', displayWinner);
 
 // Functions
-
 function placeToken(event) {
-  var clickedSpace = event.target
+  var clickedSpace = event.target;
   if (!clickedSpace.innerHTML) {
-    clickedSpace.innerHTML = newGame.currentPlayer.token
-    newGame.takeTurn(event.target.id)
+    clickedSpace.innerHTML = newGame.currentPlayer.token;
+    newGame.takeTurn(event.target.id);
     turnText.innerHTML = `IT'S  ${newGame.currentPlayer.token}'s TURN`
     }
   };
 
-function limitClicks() {
-  gameGrid.removeEventListener('click', placeToken);
-  gameGrid.removeEventListener('click', displayWinner);
-}
-
-// function startEvents()
-
 function displayWinner() {
   newGame.declareWinner();
   if (newGame.player1.won === true) {
-    turnText.innerHTML = `${newGame.player1.token} WON!!!`
-    samusWinCount.innerHTML = `${newGame.player1.wins} WINS`
-    limitClicks();
-    setTimeout(resetGameBoard, 3000)
+    turnText.innerHTML = `${newGame.player1.token} WON!!!`;
+    samusWinCount.innerHTML = `${newGame.player1.wins} WINS`;
+    stopWins();
+    setTimeout(resetGameBoard, 3000);
 } else if (newGame.player2.won === true) {
-    turnText.innerHTML = `${newGame.player2.token} WON!!!`
-    metroidWinCount.innerHTML = `${newGame.player2.wins} WINS`
-    limitClicks();
-    setTimeout(resetGameBoard, 3000)
+    turnText.innerHTML = `${newGame.player2.token} WON!!!`;
+    metroidWinCount.innerHTML = `${newGame.player2.wins} WINS`;
+    stopWins();
+    setTimeout(resetGameBoard, 3000);
   }
 };
 
@@ -55,12 +47,15 @@ function displayDraw() {
   }
 };
 
+function stopWins() {
+  gameGrid.removeEventListener('click', displayWinner);
+};
+
 function resetGameBoard() {
   newGame.resetGame();
   for (var i = 0; i < gameSpaces.length; i++) {
     gameSpaces[i].innerHTML = ''
   }
-  gameGrid.addEventListener('click', placeToken);
   gameGrid.addEventListener('click', displayWinner);
-  return turnText.innerHTML = `IT'S ${newGame.currentPlayer.token}'s TURN`
+  return turnText.innerHTML = `IT'S ${newGame.currentPlayer.token}'s TURN`;
 };
