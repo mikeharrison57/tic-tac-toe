@@ -49,6 +49,7 @@ function displayWinner() {
 
 function displayDraw() {
   if (!newGame.board.includes('') && !newGame.evaluatePlayerWins()) {
+    newGame.declareDraw();
     turnText.innerHTML = "IT'S A DRAW!!!";
     setTimeout(resetGameBoard, 3000);
   }
