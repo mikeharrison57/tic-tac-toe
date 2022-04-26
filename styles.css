@@ -1,15 +1,23 @@
 /* Body */
+/* * {
+  border: 2px solid red;
+} */
 html {
-  /* background-image: url(https://i.gifer.com/PAq.gif); */
+  background-image: url('https://i.gifer.com/PAq.gif');
+  background-position: center;
   background-color: grey;
 }
 body {
-  font-family: 'Common Pixel', sans-serif;
+  font-family: 'Press Start 2P', cursive;
   color: orange;
 }
 
 .bar__win-count {
-  font-size: 28px;
+  font-size: 25px;
+}
+
+.bar__title {
+  font-size: 30px;
 }
 
 img {
@@ -17,12 +25,16 @@ img {
 }
 
 .turn__text {
-  font-size: 35px;
+  font-size: 28px;
 }
 
 .top {
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: space-between;
+  border: 0;
+
 }
 
 .turn {
@@ -32,27 +44,35 @@ img {
 }
 
 .board--grid {
-  background-color: grey;
+  /* background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2021/06/Pixel-Cover.jpg'); */
+  background-color: rgba(79, 91, 102, .9);
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  width: 45%;
   font-size: 30px;
   display: grid;
   justify-content: center;
   grid-template-columns: auto auto auto;
+  margin-left: 26%;
 }
 
 .board--grid > div {
   text-align: center;
+  width: 60px;
+  height: 60px;
   padding: 60px;
 }
 
 .grid-set1 {
-  border-right: 7px solid green;
-  border-bottom: 7px solid green;
+  border-right: 7px solid orange;
+  border-bottom: 7px solid orange;
 }
 
 .grid-set2 {
-  border-bottom: 7px solid green;
+  border-bottom: 7px solid orange;
 }
 
 .grid-set3 {
-  border-right: 7px solid green;
+  border-right: 7px solid orange;
 }
