@@ -56,12 +56,3 @@ resetGame() {
     this.player2.won = false;
   }
 };
-
-// A Game should include:
-
-// A way to detect when a game is a draw (no one has won)
-// Conditionals for if all spaces on the grid are full. If all the spaces
-// are full, then the game will result in a draw, not update wins, and game
-// will reset.
-
-// and update win counter if a player has won
