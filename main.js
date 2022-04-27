@@ -32,7 +32,7 @@ function displayWinner() {
     turnText.innerHTML = `${newGame.player1.token} WON!!!`;
     samusWinCount.innerHTML = `${newGame.player1.wins} WINS`;
     stopWins();
-    setTimeout(resetGameBoard, 3000);
+    setTimeout(resetBoard, 3000);
 } else if (newGame.player2.won === true) {
     turnText.innerHTML = `${newGame.player2.token} WON!!!`;
     metroidWinCount.innerHTML = `${newGame.player2.wins} WINS`;
@@ -51,6 +51,9 @@ function displayDraw() {
 
 function stopWins() {
   gameGrid.removeEventListener('click', displayWinner);
+  for (var i = 0; i < gameSpaces.length; i++) {
+    gameSpaces[i].removeEventListener('click', placeToken);
+  }
 };
 
 function resetClicks() {
