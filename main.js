@@ -60,7 +60,7 @@ function resetClicks() {
   for (var i = 0; i < gameSpaces.length; i++) {
     gameSpaces[i].addEventListener('click', placeToken, {once: true});
   }
-}
+};
 
 function resetBoard() {
   newGame.resetGame();
