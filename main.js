@@ -10,14 +10,16 @@ var metroidWinCount = document.querySelector('#metroidWins');
 var newGame = new Game();
 
 // Event Listeners
-gameGrid.addEventListener('click', placeToken);
+for (var i = 0; i < gameSpaces.length; i++) {
+  gameSpaces[i].addEventListener('click', placeToken, {once: true});
+}
 gameGrid.addEventListener('click', displayDraw);
 gameGrid.addEventListener('click', displayWinner);
 
 // Functions
 function placeToken(event) {
   var clickedSpace = event.target;
-  if (!clickedSpace.innerHTML) {
+  if (clickedSpace.innerHTML === '') {
     clickedSpace.innerHTML = newGame.currentPlayer.token;
     newGame.takeTurn(event.target.id);
     turnText.innerHTML = `IT'S  ${newGame.currentPlayer.token}'s TURN`
@@ -30,12 +32,12 @@ function displayWinner() {
     turnText.innerHTML = `${newGame.player1.token} WON!!!`;
     samusWinCount.innerHTML = `${newGame.player1.wins} WINS`;
     stopWins();
-    setTimeout(resetGameBoard, 3000);
+    setTimeout(resetBoard, 3000);
 } else if (newGame.player2.won === true) {
     turnText.innerHTML = `${newGame.player2.token} WON!!!`;
     metroidWinCount.innerHTML = `${newGame.player2.wins} WINS`;
     stopWins();
-    setTimeout(resetGameBoard, 3000);
+    setTimeout(resetBoard, 3000);
   }
 };
 
@@ -43,19 +45,29 @@ function displayDraw() {
   if (!newGame.board.includes('') && !newGame.evaluatePlayerWins()) {
     newGame.declareDraw();
     turnText.innerHTML = "IT'S A DRAW!!!";
-    setTimeout(resetGameBoard, 3000);
+    setTimeout(resetBoard, 3000);
   }
 };
 
 function stopWins() {
   gameGrid.removeEventListener('click', displayWinner);
+  for (var i = 0; i < gameSpaces.length; i++) {
+    gameSpaces[i].removeEventListener('click', placeToken);
+  }
 };
 
-function resetGameBoard() {
+function resetClicks() {
+  for (var i = 0; i < gameSpaces.length; i++) {
+    gameSpaces[i].addEventListener('click', placeToken, {once: true});
+  }
+};
+
+function resetBoard() {
   newGame.resetGame();
   for (var i = 0; i < gameSpaces.length; i++) {
     gameSpaces[i].innerHTML = ''
   }
+  resetClicks();
   gameGrid.addEventListener('click', displayWinner);
   return turnText.innerHTML = `IT'S ${newGame.currentPlayer.token}'s TURN`;
 };

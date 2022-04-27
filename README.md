@@ -36,7 +36,6 @@
 
 Some future features I’d like to add to this application are:
 
-- Fixing some minor bugs related to clicking icons multiple times and being able to click squares after a win condition is met.
 - Having player wins persist across page refreshes using local storage.
 - Adding an application start-up screen and loading screen.
 - Having a button that plays a track from the _Metroid_ game series.  
@@ -54,7 +53,7 @@ Some future features I’d like to add to this application are:
 
 ## Contributor LinkedIn and GitHub
 
-- [Michael Harrison: LinkedIn](https://www.linkedin.com/in/michael-harrison-b476a498/) 
+- [Michael Harrison: LinkedIn](https://www.linkedin.com/in/michael-harrison-b476a498/)
 
 - [Michael Harrison: GitHub](https://github.com/mikeharrison57)
 
