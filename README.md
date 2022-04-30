@@ -7,6 +7,7 @@
 - [Context and Features](#context-and-features)
 - [Illustration](#illustration)
 - [Lessons Learned](#lessons-learned)
+- [Deployed Link](#deployed-link)
 - [Future Features](#future-features)
 - [Application Set-Up](#application-set-up)
 - [Contributor LinkedIn and GitHub](#contributor-linkedin-and-github)
@@ -31,6 +32,10 @@
 - This project was the most challenging and demanding that I’ve developed in my short time as a front end software development student. It may appear relatively simple on the surface, but the JavaScript functionality involved with this application was fairly complicated for me to accomplish. My fellow colleagues and I had to develop two classes, a Player and a Game class. These two classes had to be able to interact with each other, and simulate the game of tic-tac-toe using the console and the data model. This goal served to be especially challenging for me, which led me to developing my data model and DOM manipulation simultaneously. This allowed me to work on one piece of functionality at a time (taking turns, draw conditions, win conditions, etc.), and maintain steady progress throughout the course of the project. The specific properties and methods needed to have the player and game class interact properly was one of the most challenging aspects of developing this application for me. I ended up reaching out to my mentor fairly early on for some additional advice and support with the project. My mentor helped me establish a very strong foundation for the project that allowed me to really take off with the remainder of the project. The result was making my classes interact with one another in a way that simulated tic-tac-toe, but also connecting this to the DOM and having the turn taking, win conditions, and draw conditions all operating in unison on the DOM with minimal bugs or glitches.
 
 - The win functionality in particular proved to be the most challenging to develop for the data model and the DOM alike. It required me to put many of my prior skills and knowledge to the test. There are three functions total that are handling the winning conditions. One of them evaluates the player wins by iterating through all of the winning conditions in my array of `winCombos`, establishes variables that are assigned to the values of  the spaces on my `board` array compared to the index positions of each winning combo array, and finally checks for player tokens in each spot. Ultimately, it assesses whether or not there are three tokens of the same kind next to each other. If there is, the `declareWinner()` function will declare player 1 or player 2 the winner. Lastly, the `displayWinner()` function calls the `declareWinner()` function, and updates the text above the board, the win count of the winning player, and finally resets the game. Lastly, this was my first time attempting to incorporate a naming convention into my HTML and CSS. I tried to consistently use the BEM naming conventions for my HTML and CSS. This method allowed me to organize my HTML into distinguishable blocks, elements, and modifiers. This also allowed me to keep my CSS more DRY than I have been able to do in the past, and make my HTML and CSS more readable overall.      
+
+## Deployed Link
+
+- Find the deployed link for my application [here](https://mikeharrison57.github.io/tic-tac-toe/)
 
 ## Future Features
 
